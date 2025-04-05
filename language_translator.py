@@ -1,3 +1,4 @@
+#This script help the users to translate language by using google.
 from deep_translator import GoogleTranslator
 from colorama import Fore, Back, Style, init
 import time
@@ -172,3 +173,4 @@ def main():
 # Run the main function when the script is executed
 if __name__ == "__main__":
     main()
+#Don't try to copy this script. It is made for educational purposes only.
