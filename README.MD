@@ -1,4 +1,5 @@
-Universal Language Translator
+**Universal Language Translator**
+
 This is a Universal Language Translator built using the Google, which can automatically detect languages and translate text between multiple languages. It offers a user-friendly command-line interface with customizable styles for Termux or Linux environments.
 
 Features
