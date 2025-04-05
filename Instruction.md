@@ -1,3 +1,4 @@
+```bash
 sudo apt update         # For Ubuntu/Debian (Linux)
 pkg update              # For Termux
 
@@ -15,3 +16,4 @@ git clone https://github.com/tawfique02/Translator.git    # For GitHub repositor
 python language_translator.py         # For Windows
 python3 language_translator.py       # For macOS/Linux
 
+``````
