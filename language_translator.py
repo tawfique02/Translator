@@ -8,14 +8,11 @@ init(autoreset=True)
 
 # Developer Info
 DEVELOPER_INFO = """
-+----------------------------------------------------------+
-| Developer: Md Tawfique Elahey                            |
-| Purpose: Universal language translator using Google      |
-| Translate API                                            |
-| Version: 1.3                                             |
-| GitHub: https://github.com/tawfique02                    |
-| Email: stifen38@gmail.com                                |
-+----------------------------------------------------------+
+Developer: Md Tawfique Elahey
+Purpose: Universal language translator using Google
+Version: 1.3
+GitHub: https://github.com/tawfique02
+Email: stifen38@gmail.com
 """
 
 # Common languages for selection
@@ -65,16 +62,20 @@ def loading_animation():
             sys.stdout.flush()
             time.sleep(0.5)
 
-def print_boxed_text(text, color=Fore.MAGENTA):
-    """Prints text inside a box with a customizable color."""
-    width = len(text) + 4
-    print(color + "+" + "-" * (width - 2) + "+")
-    print(color + "| " + text + " |")
-    print(color + "+" + "-" * (width - 2) + "+")
+def print_boxed_text(text, color=Fore.MAGENTA, border_char='*'):
+    """Prints text inside a box with a customizable color and border character."""
+    width = len(text) + 6  # Added space for better visual padding
+    print(color + border_char * width)
+    print(color + f"{border_char}  {text}  {border_char}")
+    print(color + border_char * width)
 
 def display_developer_info():
-    """Displays developer information."""
-    print_boxed_text(DEVELOPER_INFO, Fore.GREEN)
+    """Displays a more stylish developer information box."""
+    print(Fore.CYAN + "=" * 50)
+    print(Fore.YELLOW + "          Universal Language Translator")
+    print(Fore.YELLOW + "               Developer Information")
+    print(Fore.CYAN + "=" * 50)
+    print_boxed_text(DEVELOPER_INFO, color=Fore.GREEN, border_char='═')
 
 def ask_exit_option():
     """Asks if the user wants to exit the program and provides guidance."""
@@ -146,7 +147,7 @@ def main():
 
     # Display developer info and introduction
     display_developer_info()
-    print_boxed_text("=== Universal Translator with Language Selector ===", ui_style['heading_color'])
+    print_boxed_text("=== Universal Translator with Language Selector ===", ui_style['heading_color'], border_char='═')
 
     # Select source and target languages
     source_lang = get_language(ui_style['text_color'] + "[?] Select source language: ")
@@ -163,10 +164,11 @@ def main():
     # Translate the text and display the result
     result = translate_text(text, source_lang, target_lang)
     
-    print_boxed_text(f"[+] Translated: {result}", ui_style['box_color'])
+    print_boxed_text(f"[+] Translated: {result}", ui_style['box_color'], border_char='═')
 
     # Ask if the user wants to exit
     ask_exit_option()
 
-if _name_ == "_main_":
+# Run the main function when the script is executed
+if __name__ == "__main__":
     main()
